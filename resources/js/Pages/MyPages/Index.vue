@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
-    <left-index></left-index>
-    <div class="bg-vet-ash h-screen w-1/2">
+    <left-index :height="height"></left-index>
+    <div class="bg-vet-ash w-1/2" :style="{ 'height': height + 'px' }">
       <div class="bg-white pl-20 pr-36">
         <div class="pt-28 text-4xl font-semibold text-gray-600">
           Welcome to <span class="text-vet-blue">Vetsark</span>
@@ -59,9 +59,11 @@
       </div>
       <div class="pt-16 bg-vet-ash">
         <div class="w-1/3 mx-auto">
-            <google-sign-in></google-sign-in>
+          <google-sign-in></google-sign-in>
         </div>
-        <div class="text-lg text-center pt-4 pb-10 text-gray-600">Don’t have an account? <span class="text-vet-blue">Create One</span></div>
+        <div class="text-lg text-center pt-4 text-gray-600">
+          Don’t have an account? <span class="text-vet-blue">Create One</span>
+        </div>
       </div>
     </div>
   </div>
@@ -69,7 +71,7 @@
 
 <script>
 import EyeIcon from "../MyComponents/EyeIcon.vue";
-import GoogleSignIn from '../MyComponents/GoogleSignIn.vue';
+import GoogleSignIn from "../MyComponents/GoogleSignIn.vue";
 import LeftIndex from "./LeftIndex.vue";
 export default {
   components: { LeftIndex, EyeIcon, GoogleSignIn },
@@ -78,10 +80,14 @@ export default {
       email: "",
       password: "",
       show_password: false,
+      height: this.getScreenHeight(),
     };
   },
   methods: {
     submit() {},
+    getScreenHeight() {
+      return screen.height;
+    },
   },
 };
 </script>

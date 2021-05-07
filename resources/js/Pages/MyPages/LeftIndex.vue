@@ -1,5 +1,8 @@
 <template>
-  <div class="bg-bg-1 to-black from-bg-1 bg-gradient-to-b relative w-1/2 h-screen">
+  <div
+    class="bg-bg-1 to-black from-bg-1 bg-gradient-to-b relative w-1/2"
+    :style="{ height: height + 'px' }"
+  >
     <div class="absolute right-0 -mt-9 mr-8">
       <circle-icon></circle-icon>
     </div>
@@ -65,6 +68,9 @@ export default {
     CircleAshIcon,
     CircleGreenIcon,
     CircleWhiteIcon,
+  },
+  props: {
+    height: Number,
   },
 };
 </script>
