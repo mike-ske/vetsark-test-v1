@@ -18,10 +18,25 @@ use Inertia\Inertia;
 
 Route::get('/', [IndexController::class, 'index']);
 
+Route::get('/register', [IndexController::class, 'register']);
+
+Route::post('/register', [IndexController::class, 'create']);
+
+// Route::get('/register', [IndexController::class, 'register']);
+Route::get('/dashboard/{blog}', [TasksController::class, 'show']);
+
 // return Inertia::render('Welcome', [
 //     'canLogin' => Route::has('login'),
 //     'canRegister' => Route::has('register'),
 // ]);
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->name('dashboard');
+//  Route::middleware(['auth:sanctum', 'verified'])->get({
+//     return Inertia::render('Dashboard');
+// })->name('dashboard');
+
+
+
+
+// })
+    
+    
+ 

@@ -62,7 +62,8 @@
           <google-sign-in></google-sign-in>
         </div>
         <div class="text-lg text-center pt-4 text-gray-600">
-          Don’t have an account? <span class="text-vet-blue">Create One</span>
+          Don’t have an account? <a href="/register" class="text-vet-blue">Create One</a>
+            
         </div>
       </div>
     </div>
